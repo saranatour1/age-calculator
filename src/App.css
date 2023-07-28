@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+:root {
+  /* Primary colors */
+  --primary-purple: hsl(259, 100%, 65%);
+  --primary-red: hsl(0, 100%, 67%);
+
+  /* Nuetrals */
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+
+  /* Font Related */
+  --font-family: "Poppins", sans-serif;
+  --input-font-size: 32px;
+  --normal-font-weight: 400;
+  --large-font: 700;
+  --larger-font: 800;
+  --font-style: italic;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: var(--off-white);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  display: grid;
+  height: 100vh; 
+  width: 100vw; 
+  justify-items: center; 
+  align-items: center; 
+}
+
+.card{
+  max-width: 90dvw;
+  height: 90dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+section:not(.display){
+  width: 700px;
+  height: 500px;
+  /* border: 2px solid black; */
+  border-top-left-radius: 25px;
+  border-top-right-radius:25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 250px;
+  padding: 50px;
+
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  background-color: var(--white);
+}
+
+.date-vals{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px; 
+  justify-items: left;
+  width: 80%;
+}
+
+.date-vals > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+label{
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: var(--normal-font-weight);
+  color: var(--smokey-grey);
+}
+
+/* any alternative to this? */
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+input[type=number]{
+  outline: none;
+  width: 145px;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid var(--light-grey);
+  background-color: transparent;
+}
+
+input[type=number]:focus , input[type=number]:active{
+  border: 1px solid var(--primary-purple);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 0%;
+}
+
+input::placeholder{
+  /* padding: 20px; */
+  color: var(--smokey-grey);
+  font-size: 20px;
+  font-weight: 700;
+  /* text-indent: 40px; */
+  text-align: left;
+  padding-left: 50px;
+}
+input:not([value=" "]){
+  font-weight: var(--larger-font);
+  font-family: var(--font-family);
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+
+/* hr{
+  margin: 3rem auto;
+  width: 100%;
+  color: var(--light-grey);
+  opacity: 50%;
+
+  display:block;
+}
+hr::after{
+  background-image:url('./src/assets/icon-arrow.svg');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--primary-purple);
+  width: 50px;
+  height: 50px;
+} */
+
+.hr-container {
+  position: relative; /* Set the container as a reference for positioning */
+  margin: 3rem auto;
+  width: 100%;
+}
+
+.hr-line {
+  border: none;
+  border-top: 1px solid var(--light-grey);
+  opacity: 50%;
+}
+
+.hr-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-image: url('./src/assets/icon-arrow.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--primary-purple);
+  background-size: 50% auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.hr-container:hover::after  {
+  background-color: var(--off-black);
+  cursor: pointer;
+}
+
+
+section.display{
+  height: fit-content;
+  width: fit-content;
+}
+
+section.display > p{
+  font-size: 64px;
+  font-weight: var(--larger-font);
+  font-style: italic;
+  color: var(--off-black);
+}
+section.display > p > span{
+  color: var(--primary-purple);
+}
+
+small{
+  color: var(--primary-red);
+  font-size: x-small;
+  font-weight: 400;
+  /* margin: 2px 0; */
+}
+
+input.input-error{
+  border: 1px solid var(--primary-red);
+}
+
+label.input-error{
+  color: var(--primary-red);
+}
+
+
+
+@media screen and (max-width: 376px) {
+  .card {
+    /* padding: auto; */
+    max-width: 100dvw;
+  }
+
+  section:not(.display) {
+    width: 291px;
+    height: 440px;
+    padding: 30px;
+    border-bottom-right-radius: 30%;
+  }
+
+  .date-vals{
+    display: grid;
+    /* grid-template-columns:1fr; */
+    gap: 20px; 
+  }
+
+  input[type=number]{
+    width: 75px;
+    height: 40px;
+  }
+
+  .hr-container::after {
+    /* background-position: right center; */
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
+
+  section.display{
+    height: 100%;
+    
+  }
+
+  section.display > p{
+    font-size: 50px;
+
+  }
+}
