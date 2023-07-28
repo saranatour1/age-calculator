@@ -113,13 +113,14 @@ input::placeholder{
   font-weight: 700;
   /* text-indent: 40px; */
   text-align: left;
-  padding-left: 50px;
+  /* padding-left: 50px; */
 }
 input:not([value=" "]){
   font-weight: var(--larger-font);
   font-family: var(--font-family);
   font-size: 20px;
   padding-left: 10px;
+  
 }
 
 
@@ -159,7 +160,7 @@ hr::after{
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  background-image: url('./src/assets/icon-arrow.svg');
+  background-image: url('/src/assets/icon-arrow.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-color: var(--primary-purple);
